@@ -71,6 +71,22 @@
         "path": "https://ria.ru:443",
         "interval_ms": 1
       }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://www.gosuslugi.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://sberbank.ru:443",
+        "interval_ms": 1
+      }
     }
   ]
 }
