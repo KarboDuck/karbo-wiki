@@ -8,9 +8,6 @@
         "body": "{{- random_payload 1000 -}}"
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -19,9 +16,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -30,9 +24,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -41,9 +32,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -52,9 +40,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -63,9 +48,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -74,9 +56,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -85,9 +64,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -96,9 +72,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -107,9 +80,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -118,9 +88,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -129,9 +96,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -140,9 +104,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -151,9 +112,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -162,9 +120,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -173,9 +128,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -184,9 +136,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -195,9 +144,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -206,9 +152,6 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
@@ -217,18 +160,12 @@
         "interval_ms": 1
       }
     },
-      "client": {
-        "async": true
-      }
     {
       "type": "http",
       "args": {
         "method": "GET",
         "path": "https://www.rbc.ru:443",
         "interval_ms": 1
-      },
-      "client": {
-        "async": true
       }
     }
   ]
