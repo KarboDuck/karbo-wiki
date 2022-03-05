@@ -9,7 +9,7 @@
       }
     },
     {
-      "type": "tcp",
+      "type": "http",
       "args": {
         "address": "178.248.233.32:80",
         "interval_ms": 1,
@@ -17,7 +17,7 @@
       }
     },
     {
-      "type": "tcp",
+      "type": "http",
       "args": {
         "address": "178.248.233.32:443",
         "interval_ms": 1,
