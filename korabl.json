@@ -15,6 +15,62 @@
         "path": "http://tass.ru/",
         "interval_ms": 1
       }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://www.gazeta.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://sputnik.by:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://lenta.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://www.vesti.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://tvzvezda.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://tvzvezda.ru:443",
+        "interval_ms": 1
+      }
+    },
+    {
+      "type": "http",
+      "args": {
+        "method": "GET",
+        "path": "https://ria.ru:443",
+        "interval_ms": 1
+      }
     }
   ]
 }
