@@ -9,6 +9,30 @@
       }
     },
     {
+      "type": "udp",
+      "args": {
+        "address": "91.217.20.1",
+        "interval_ms": 1,
+        "body": "{{- random_payload 1000 -}}"
+      }
+    },
+    {
+      "type": "udp",
+      "args": {
+        "address": "193.232.146.1",
+        "interval_ms": 1,
+        "body": "{{- random_payload 1000 -}}"
+      }
+    },
+    {
+      "type": "udp",
+      "args": {
+        "address": "91.217.21.1",
+        "interval_ms": 1,
+        "body": "{{- random_payload 1000 -}}"
+      }
+    },
+    {
       "type": "http",
       "args": {
         "method": "GET",
