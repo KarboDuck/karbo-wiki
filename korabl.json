@@ -116,14 +116,6 @@
       "type": "http",
       "args": {
         "method": "GET",
-        "path": "https://sberbank.ru:443",
-        "interval_ms": 1
-      }
-    },
-    {
-      "type": "http",
-      "args": {
-        "method": "GET",
         "path": "https://vsoloviev.ru:443",
         "interval_ms": 1
       }
@@ -172,23 +164,7 @@
       "type": "http",
       "args": {
         "method": "GET",
-        "path": "https://www.gazprombank.ru:443",
-        "interval_ms": 1
-      }
-    },
-    {
-      "type": "http",
-      "args": {
-        "method": "GET",
         "path": "https://www.rt.com:443",
-        "interval_ms": 1
-      }
-    },
-    {
-      "type": "http",
-      "args": {
-        "method": "GET",
-        "path": "https://www.rbc.ru:443",
         "interval_ms": 1
       }
     }
