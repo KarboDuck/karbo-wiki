@@ -2,11 +2,25 @@
 5.188.56.124 22
 193.104.87.251 80
 194.84.25.50 80
-178.248.232.222 80  #smotrim.ru
-178.248.232.222 443 #smotrim.ru
+smotrim.ru 80
+smotrim.ru 443
 ria.ru 80
 ria.ru 443
 5.188.56.124 22 #ВТБ
 194.54.14.131 4477 #порт додатку сбера
 rt.com 80
 rt.com 443
+gazeta.ru 80
+gazeta.ru 443
+sputnik.by 80
+sputnik.by 443
+qiwi.com 80
+qiwi.com 443
+lenta.ru 80
+lenta.ru 443
+vesti.ru 80
+vesti.ru 443
+1tv.ru 80
+1tv.ru 443
+rbc.ru 80
+rbc.ru 443
