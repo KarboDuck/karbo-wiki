@@ -15,3 +15,7 @@ rt.com 443 tcp
 217.175.155.100 53 udp #DNS'ки РЖД.ру
 217.175.155.12 53 udp #DNS'ки РЖД.ру
 217.175.140.71 53 udp #DNS'ки РЖД.ру
+server.nspk.ru 443 tcp
+server.nspk.ru 500 udp
+sip.nspk.ru 443 tcp
+nspk.ru 443 tcp
