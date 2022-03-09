@@ -4,3 +4,7 @@
 217.20.155.13 443
 217.20.147.1 80
 217.20.147.1 443 #--ok.ru
+195.208.109.58 80 #acs.vendorcert.mirconnect.ru
+195.208.109.58 443 #acs.vendorcert.mirconnect.ru
+ds1.mirconnect.ru
+ds2.mirconnect.ru
