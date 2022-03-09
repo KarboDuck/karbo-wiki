@@ -1,11 +1,9 @@
-5.61.23.11 80 #ok.ru
-5.61.23.11 443
-217.20.155.13 80
-217.20.155.13 443
-217.20.147.1 80
-217.20.147.1 443 #--ok.ru
-195.208.109.58 80 #acs.vendorcert.mirconnect.ru
-195.208.109.58 443 #acs.vendorcert.mirconnect.ru
-ds1.mirconnect.ru
-ds2.mirconnect.ru
-146.158.54.24 443
+5.61.23.11 80 tcp #ok.ru
+5.61.23.11 443 tcp
+217.20.155.13 80 tcp
+217.20.155.13 443 tcp
+217.20.147.1 80 tcp
+217.20.147.1 443 tcp #--ok.ru
+195.208.109.58 80 tcp #acs.vendorcert.mirconnect.ru
+195.208.109.58 443 tcp #acs.vendorcert.mirconnect.ru
+146.158.54.24 443 tcp
