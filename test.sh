@@ -5,5 +5,5 @@ main_f () {
 }
 while true
 do
-main
+main_f
 done
