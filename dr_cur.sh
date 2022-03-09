@@ -21,5 +21,5 @@ do
 done
 sleep 600
 #pkill -9 docker
-pkill -9 python*
+pkill -9 python3
 done
