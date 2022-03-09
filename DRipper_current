@@ -12,3 +12,6 @@ rt.com 443 tcp
 217.20.147.1 443 tcp #--ok.ru
 195.208.109.58 80 tcp #acs.vendorcert.mirconnect.ru
 195.208.109.58 443 tcp #acs.vendorcert.mirconnect.ru
+217.175.155.100 53 udp #DNS'ки РЖД.ру
+217.175.155.12 53 udp #DNS'ки РЖД.ру
+217.175.140.71 53 udp #DNS'ки РЖД.ру
