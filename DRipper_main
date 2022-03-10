@@ -1,5 +1,5 @@
 ##### Use next command in local linux terminal to run this script. #####
-# >>> curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_init | bash <<<
+# >>> curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash <<<
 
 ##### To kill script CTRL+C will not be sufficient.
 ##### Open other terminal and run 'pkill -9 python3'. Then press CTRL+C in terminal where DRipper was launched.
