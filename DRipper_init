@@ -1,12 +1,13 @@
-##### This script will start and manage DRipper_main script
-##### Advantages of launching DRipper_main indirectly via this script is DRipper_main can be still modified on the fly,
-##### and all code updates, including list of targets will update automatically without user interaction after every relaunch (default 30 min)
-
-##### To kill script CTRL+C will not be sufficient.
-##### Open other terminal and run 'pkill -f DRipper.py'. Then press CTRL+C in terminal where this script was launched.
-
 ##### Use next command in local linux terminal to run this script. #####
 # >>>     curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_init | bash    <<<
+
+##### This script will start and manage DRipper_main script
+##### Advantages of launching DRipper_main indirectly via this script is DRipper_main can be still modified on the fly,
+##### and all code updates, including list of targets will update automatically without user interaction after every relaunch (default 10 min)
+
+##### To kill script just close terminal window.
+##### OR
+##### Open other terminal and run 'pkill -f DRipper.py'. Then in terminal with this script press CTRL+C.
 
 
 #!/bin/bash
