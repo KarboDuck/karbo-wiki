@@ -31,7 +31,7 @@ do
              port=$(echo ${targets[i]} | awk '{print $2}')
              prot=$(echo ${targets[i]} | awk '{print $3}')
              
-             echo $site $port $prot
+             echo $addr $port $prot
              sleep 1
             
              # Launch DRipper to attack site choosen above
