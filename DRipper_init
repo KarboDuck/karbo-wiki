@@ -5,6 +5,20 @@
 ##### In other terminal run 'pkill -9 python3'. Then press CTRL+C in terminal where DRipper was launched.
 
 #!/bin/bash
+declare -a targets
+targets[0]="193.104.87.251 80 tcp" #РЖД
+targets[0]="193.104.87.251 80 tcp" #РЖД
+targets[0]="193.104.87.251 80 tcp" #РЖД
+targets[0]="193.104.87.251 80 tcp" #РЖД
+echo ${#foo[*]}
+
+for i in "${foo[@]}"
+do
+        echo "$i"
+done
+
+
+
 while true
 do
         pkill -9 python3
