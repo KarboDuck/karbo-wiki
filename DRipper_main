@@ -10,7 +10,7 @@
 # Low number is counter-productive because some sites might go down fast, so script won't do any work.
 # Somewhere beetween 4 and 8 targets is good starting point.
 # With high number of copies console output will be messy because all instances of DRipper use same terminal.
-num_of_targets=8
+num_of_targets=10
 
 declare -a targets
 ###################### LIST OF TARGETS #########################
