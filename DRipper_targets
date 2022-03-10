@@ -1,3 +1,8 @@
+### First 5 lines has to be commented
+### Format for each other line has to be:
+### address port protocol - 193.104.87.251 80 tcp
+### Script will search for all three options, so they has to be there
+### Last parameter (#comment) is for convenience and doesn't used by script
 193.104.87.251 80 tcp #РЖД
 194.84.25.50 80 tcp #РЖД
 5.188.56.124 22 tcp #админ сервер ВТБ
