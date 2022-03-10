@@ -1,3 +1,4 @@
+echo "start"
 while true
 do
         pkill -9 python3
