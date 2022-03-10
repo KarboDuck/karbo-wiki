@@ -19,8 +19,8 @@ targets[6]="5.61.23.11 80 tcp"           #ok.ru
 targets[7]="195.208.109.58 80 tcp"       ##acs.vendorcert.mirconnect.ru
 targets[8]="195.208.109.58 443 tcp"      #acs.vendorcert.mirconnect.ru
 targets[9]="217.175.155.100 53 udp"      #DNS'ки РЖД.ру
-targets[9]="217.175.155.12 53 udp"       #DNS'ки РЖД.ру
-targets[10]="217.175.140.71 53 udp"      #DNS'ки РЖД.ру
+targets[10]="217.175.155.12 53 udp"       #DNS'ки РЖД.ру
+targets[11]="217.175.140.71 53 udp"      #DNS'ки РЖД.ру
 ################################################################
 list_size=${#targets[*]}
 
