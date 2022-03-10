@@ -2,7 +2,7 @@
 # >>>   curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash   <<<
 
 ##### To kill script CTRL+C will not be sufficient.
-##### Open other terminal and run 'pkill -f DRipper.py'. Then press CTRL+C in terminal where DRipper was launched.
+##### Open other terminal and run 'pkill -f DRipper.py'. Then press CTRL+C in terminal where this script was launched.
 
 #!/bin/bash
 #How many copies of DRipper would be launched
