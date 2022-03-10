@@ -1,4 +1,21 @@
 ##### Use next command in local linux terminal to run this script. #####
 # >>> curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_init | bash <<<
 
+# Install latest version of DDripper
+sudo apt install git
+cd ~
+git clone https://github.com/alexmon1989/russia_ddos.git
+cd russia_ddos
+pip install -r requirements.txt
+
 curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash
+
+
+#kill_list=`ps -aux | grep DRipper.py | grep -v grep | awk '{ print $2 }'`
+
+#for i in kill_list
+#do
+#pkill $i
+#done
+
+#killall `ps -aux | grep DRipper.py | grep -v grep | awk '{ print $2 }'` && killall inotifywait
