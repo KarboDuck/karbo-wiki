@@ -11,7 +11,7 @@
 
 #!/bin/bash
 # Restart DRipper.py every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m)
-restart_time=1800
+restart_time=600
 
 # Install git
 if [ ! -f /usr/bin/git ]; then
@@ -31,7 +31,7 @@ do
    # Run main script
    curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash
 
-   # Restart DRipper_main after N seconds (default 1800s = 30m)
+   # Restart DRipper_main after N seconds (default 600s = 10m)
    sleep $restart_time
    pkill -f DRipper.py
 done
