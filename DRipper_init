@@ -21,8 +21,8 @@ do
         for i in $(seq 1 $DR_threads)
         do
         
-             # Get random line from list of sites. First 5 lines ommited
-             site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper | tail -n +6 | shuf -n 1)
+             # Get random line from list of targets. First 5 lines ommited
+             site=$(curl https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | tail -n +6 | shuf -n 1)
              
              # Get site address, port and protocol from the line (1, 2 and 3 'collumn')
              addr=$(echo $site | awk '{print $1}')
