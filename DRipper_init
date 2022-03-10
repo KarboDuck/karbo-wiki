@@ -33,7 +33,7 @@ do
    # Restart DRipper_main after restart_time seconds (default 1800s == 30m)
    sleep $restart_time
    
-   pkill -P $$
+   pkill -f DRipper.py
    #pkill -9 python; pkill -9 python3
 done
 
