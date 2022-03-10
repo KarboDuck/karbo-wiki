@@ -1,5 +1,3 @@
-#!/bin/bash
-
 while true
 do
 pkill -9 python3
