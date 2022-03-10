@@ -10,7 +10,7 @@
 
 #!/bin/bash
 # DRipper_main restart time in seconds
-restart_time=1800
+restart_time=60
 
 # Install git
 if [ ! -f /usr/bin/git ]; then
@@ -32,7 +32,9 @@ do
 
    # Restart DRipper_main after restart_time seconds (default 1800s == 30m)
    sleep $restart_time
-   pkill -9 python; pkill -9 python3
+   
+   pkill -P $$
+   #pkill -9 python; pkill -9 python3
 done
 
 
