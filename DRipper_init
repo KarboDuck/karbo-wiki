@@ -3,7 +3,7 @@
 
 ##### This script will start and manage DRipper_main script
 ##### Advantages of launching DRipper_main indirectly via this script is DRipper_main can be still modified on the fly,
-##### and all code updates, including list of targets will update automatically without user interaction after every relaunch (default 10 min)
+##### and all code updates, including list of targets will update automatically after every relaunch (default 10 min) without user interaction.
 
 ##### To kill script just close terminal window.
 ##### OR
@@ -22,7 +22,7 @@ fi
 while true
 do
    
-   # Download latest version of DDripper
+   # Download latest version of DDripper.
    cd ~
    rm -rf russia_ddos
    git clone https://github.com/alexmon1989/russia_ddos.git
