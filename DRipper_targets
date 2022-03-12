@@ -9,18 +9,18 @@ rt.com 443 tcp                        #rt.com
 195.208.109.58 443 tcp                #acs.vendorcert.mirconnect.ru
 217.175.155.100 53 udp                #DNS'ки РЖД.ру
 217.175.155.12 53 udp                 #DNS'ки РЖД.ру
-217.175.140.71 53 udp	              #DNS'ки РЖД.ру
-https://eda.yandex.ru 443 tcp         #сайт доставки еды
-https://www.delivery-club.ru 443 tcp  #сайт доставки еды
-https://m-food.ru 443 tcp             #сайт доставки еды
-https://sbermarket.ru 443 tcp         #сайт доставки еды
-https://chibbis.ru 443 tcp            #сайт доставки еды
-https://lavka.yandex 443 tcp          #сайт доставки еды
-https://www.kp.ru 443 tcp
-https://ria.ru 443 tcp
-https://lenta.ru 443 tcp
-https://www.mk.ru 443 tcp
-https://rg.ru 443 tcp
-https://www.gazeta.ru 443 tcp
-https://aif.ru 443 tcp
-https://tass.ru 443 tcp
+217.175.140.71 53 udp	                #DNS'ки РЖД.ру
+eda.yandex.ru 443 tcp                 #сайт доставки еды
+delivery-club.ru 443 tcp              #сайт доставки еды
+m-food.ru 443 tcp                     #сайт доставки еды
+sbermarket.ru 443 tcp                 #сайт доставки еды
+chibbis.ru 443 tcp                    #сайт доставки еды
+lavka.yandex 443 tcp                  #сайт доставки еды
+kp.ru 443 tcp
+ria.ru 443 tcp
+lenta.ru 443 tcp
+mk.ru 443 tcp
+rg.ru 443 tcp
+gazeta.ru 443 tcp
+aif.ru 443 tcp
+tass.ru 443 tcp
