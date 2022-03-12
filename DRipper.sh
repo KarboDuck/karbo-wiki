@@ -36,7 +36,7 @@ do
    # Get number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
    
-   echo -e ""\nNumber of targets in list: " $list_size "\n"
+   echo -e "\nNumber of targets in list: " $list_size "\n"
    sleep 1
 
    # Get random numbers to choose multiple targets from DRipper_targets
