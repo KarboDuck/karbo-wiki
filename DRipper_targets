@@ -10,12 +10,12 @@ rt.com 443 tcp                        #rt.com
 217.175.155.100 53 udp                #DNS'ки РЖД.ру
 217.175.155.12 53 udp                 #DNS'ки РЖД.ру
 217.175.140.71 53 udp	              #DNS'ки РЖД.ру
-https://eda.yandex.ru 443 tcp         #сайты доставки еды
-https://www.delivery-club.ru 443 tcp  #сайты доставки еды
-https://m-food.ru 443 tcp             #сайты доставки еды
-https://sbermarket.ru 443 tcp         #сайты доставки еды
-https://chibbis.ru 443 tcp            #сайты доставки еды
-https://lavka.yandex 443 tcp          #сайты доставки еды
+https://eda.yandex.ru 443 tcp         #сайт доставки еды
+https://www.delivery-club.ru 443 tcp  #сайт доставки еды
+https://m-food.ru 443 tcp             #сайт доставки еды
+https://sbermarket.ru 443 tcp         #сайт доставки еды
+https://chibbis.ru 443 tcp            #сайт доставки еды
+https://lavka.yandex 443 tcp          #сайт доставки еды
 https://www.kp.ru/ 443 tcp
 https://ria.ru/ 443 tcp
 https://lenta.ru/ 443 tcp
