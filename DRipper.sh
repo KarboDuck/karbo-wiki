@@ -49,7 +49,8 @@ do
       do
              # Get address, port and protocol from pre-selected targetle
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
-             #echo $site
+             site="/""site"/""
+             echo $site
              
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
