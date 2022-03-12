@@ -16,3 +16,11 @@ https://m-food.ru 443 tcp             #сайты доставки еды
 https://sbermarket.ru 443 tcp         #сайты доставки еды
 https://chibbis.ru 443 tcp            #сайты доставки еды
 https://lavka.yandex 443 tcp          #сайты доставки еды
+https://www.kp.ru/ 443 tcp
+https://ria.ru/ 443 tcp
+https://lenta.ru/ 443 tcp
+https://www.mk.ru 443 tcp
+https://rg.ru/ 443 tcp
+https://www.gazeta.ru/ 443 tcp
+https://aif.ru/ 443 tcp
+https://tass.ru/ 443 tcp
