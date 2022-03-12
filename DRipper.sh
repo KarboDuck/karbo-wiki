@@ -45,7 +45,7 @@ do
    sleep 1
    
    # Print targets on screen
-   echo -e "Choosen targets:"
+   echo "Choosen targets:"
    for i in $random_numbers
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
