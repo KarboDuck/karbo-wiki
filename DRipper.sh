@@ -45,7 +45,7 @@ do
    for i in $random_numbers
       do
              # Get address, port and protocol from pre-selected targetle
-             site=$(awk 'NR==$i' <<< `curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat |`)
+             site=$(awk 'NR==$i' <<< `curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat`)
              echo $site
              echo $i
              sleep 30
