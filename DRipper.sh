@@ -52,8 +52,6 @@ do
              echo $site
              sleep 0.3
    done
-   echo -e "\n"
-   sleep 1
    
    # Launch multiple DRipper.py instances
    for i in $random_numbers
