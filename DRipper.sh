@@ -60,7 +60,7 @@ do
              # Launch DRipper
              #python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
       done
-      echo "array: " "${targets[@]}
+      echo "array: " ${targets[@]}
       for i in $targets
          do
              echo $i
