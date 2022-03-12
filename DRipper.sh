@@ -56,17 +56,18 @@ do
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
 
-             targets+=("${site}\|")
+             targets+=("${site}")
 
              # Launch DRipper
              #python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
       done
    echo "array: " ${targets[@]}
    echo " "
-   IFS=|
+   #IFS=|
    for i in ${targets[@]}
       do
          echo $i
+         echo " "
       done
       
    # Restart DRipper_main after N seconds (default 600s = 10m)
