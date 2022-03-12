@@ -64,7 +64,7 @@ do
    echo "array: " ${targets[@]}
    echo " "
    IFS=|
-   for i in $targets
+   for i in ${targets[@]}
       do
          echo $i
       done
