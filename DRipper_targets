@@ -1,11 +1,7 @@
-193.104.87.251 80 tcp                 #РЖД
-194.84.25.50 80 tcp                   #РЖД
 5.188.56.124 22 tcp                   #админ сервер ВТБ
 194.54.14.131 4477 tcp                #порт додатку сбера
-rt.com 80 tcp                         #rt.com
 rt.com 443 tcp                        #rt.com
-5.61.23.11 80 tcp                     #ok.ru
-195.208.109.58 80 tcp                 ##acs.vendorcert.mirconnect.ru
+5.61.23.11 443 tcp                    #ok.ru
 195.208.109.58 443 tcp                #acs.vendorcert.mirconnect.ru
 217.175.155.100 53 udp                #DNS'ки РЖД.ру
 217.175.155.12 53 udp                 #DNS'ки РЖД.ру
