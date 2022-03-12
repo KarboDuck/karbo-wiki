@@ -19,7 +19,7 @@ fi
 # Low number is counter-productive because some sites might go down fast, so script won't do any work.
 # Somewhere beetween 4 and 8 targets is good starting point.
 # With high number of copies console output will be messy because all instances of DRipper use same terminal.
-num_of_targets=8
+num_of_targets=6
 
 # Restart DRipper.py every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m)
 restart_time=600
@@ -36,11 +36,10 @@ do
    # Get number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
    
-   echo -e "\n"
-   echo -e "Number of targets in list: " $list_size "\n"
+   echo -e ""\nNumber of targets in list: " $list_size "\n"
    sleep 1
 
-   # Get multiple random numbers to choose multiple targets from DRipper_targets
+   # Get random numbers to choose multiple targets from DRipper_targets
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
    echo -e "random numbers: " $random_numbers "\n"
    sleep 1
@@ -59,7 +58,7 @@ do
    # Launch multiple DRipper.py instances
    for i in $random_numbers
    do
-            # Get address, port and protocol from pre-selected targetle
+            # Get address, port and protocol from pre-selected targets
             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
 
             addr=$(echo $site | awk '{print $1}')
