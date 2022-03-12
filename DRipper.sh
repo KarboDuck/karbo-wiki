@@ -47,12 +47,12 @@ do
    # Launch several copies of DRipper.
    for i in $random_numbers
       do
+             echo "array: "$targets
              # Get address, port and protocol from pre-selected targetle
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
              echo $site
              
              targets+=($site)
-             echo $targets
              
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
