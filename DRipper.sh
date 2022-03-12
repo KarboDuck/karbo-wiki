@@ -63,7 +63,7 @@ do
       done
    echo "array: " ${targets[@]}
    echo " "
-   IFS='|'
+   IFS=|
    for i in $targets
       do
          echo $i
