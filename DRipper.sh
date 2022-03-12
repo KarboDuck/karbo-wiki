@@ -62,12 +62,11 @@ do
              #python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
       done
    echo "array: " ${targets[@]}
-   IFS=", "
+   IFS=","
    for i in ${targets[@]}
       do
          echo $i
       done
-      
    # Restart DRipper_main after N seconds (default 600s = 10m)
    sleep $restart_time
    pkill -f DRipper.py
