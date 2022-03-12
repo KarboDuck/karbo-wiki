@@ -44,9 +44,10 @@ do
    # Launch several copies of DRipper.
    for i in $random_numbers
       do
-             # Get address, port and protocol from pre-selected target
-             awk 'NR==5' file
+             # Get address, port and protocol from pre-selected targetle
              site=$(awk 'NR==$i' < curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)
+             
+             sed '10q;d' file
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
