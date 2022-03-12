@@ -39,6 +39,7 @@ do
 
    # Get multiple random numbers to choose multiple targets from DRipper_targets
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
+   echo "random numbers: " $random_numbers
 
    # Launch several copies of DRipper.
    for i in $random_numbers
