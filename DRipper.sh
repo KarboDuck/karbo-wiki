@@ -51,10 +51,10 @@ do
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
              echo $site
-             sleep 1
+             sleep 0.3
    done
    echo -e "\n"
-   sleep 3
+   sleep 1
    
    # Launch multiple DRipper.py instances
    for i in $random_numbers
