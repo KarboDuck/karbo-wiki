@@ -40,7 +40,7 @@ do
    for i in $random_numbers
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
-             echo $site
+             echo -e $site"\n"
              sleep 0.2
    done
    
