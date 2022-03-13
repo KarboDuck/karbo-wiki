@@ -36,7 +36,7 @@ do
    echo -e "random numbers: " $random_numbers "\n"
    
    # Print all randomly selected targets on screen
-   echo "Choosen targets:"
+   echo -e "Choosen targets:\n"
    for i in $random_numbers
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
