@@ -8,4 +8,4 @@ CFB https://всезапомним.рф/ 0 500 socks5.txt 100 3600              
 post http://acs.vendorcert.mirconnect.ru 5 4000 socks5.txt 1000 18000 true    # https://t.me/c/1624648668/71
 tcp 217.20.155.93:53 2000 3600 true                                           # DNS сервер ok.ru  https://t.me/c/1624648668/70
 bypass https://smotrim.ru 5 1000 socks5.txt 100 3600 true                     # smotrim.ru
-bypass https://lenta.ru 5 1000 socks5.txt 100 3600 true                       # smotrim.ru
+bypass https://lenta.ru 5 1000 socks5.txt 100 3600 true                       # lenta.ru
