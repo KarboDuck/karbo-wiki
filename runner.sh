@@ -13,7 +13,7 @@ restart_interval=1800
 ## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
 num_of_copies=2
 
-sudo apt update
+#sudo apt update
 
 # Install git if it doesn't installed already
 if [ ! -f /usr/bin/git ]; then
