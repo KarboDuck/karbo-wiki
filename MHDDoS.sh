@@ -61,5 +61,6 @@ do
             python3 ~/MHDDoS/start.py $cmd_line&
    done
 sleep $restart_interval
+echo -e "/n RESTARTINg /n"
 pkill -f start.py
 done
