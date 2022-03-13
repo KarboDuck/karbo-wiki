@@ -21,6 +21,12 @@ if [ ! -f /usr/bin/python3 ]; then
    sudo apt install python3 -y
 fi
 
+# Install pip if it doesn't installed already
+if [ ! -f /usr/bin/pip ]; then
+   apt install python3-pip  -y
+fi
+
+
 #No output. Resolved some problems with pip on debian
 pip install --upgrade pip > /dev/null 
 
