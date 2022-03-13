@@ -72,6 +72,6 @@ do
    done
 echo "#####################################"
 sleep $restart_interval
-echo -e "/n RESTARTINg /n"
+echo -e "n RESTARTING\n"
 pkill -f start.py
 done
