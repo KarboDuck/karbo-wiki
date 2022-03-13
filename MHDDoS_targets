@@ -1,9 +1,9 @@
 ### First 5 lines has to be commented
-### Every line shoud end with comment (#tass.ru). As '#' is used as delimiter in script.
+### Every other line shoud be commented in the end (#tass.ru). It is neccessary even if comment is empty, as '#' is used as delimiter in script.
 ###
 ###
 ###
 CFB tass.ru 0 500 socks5.txt 100 600    #tass.ru
-CFB https://xn--80adjigxbghjs.xn--p1ai 0 500 socks5.txt 100 600    #https://всезапомним.рф/
+CFB https://всезапомним.рф/ 0 500 socks5.txt 100 600    #https://всезапомним.рф/
 post http://acs.vendorcert.mirconnect.ru 5 4000 socks5.txt 1000 18000 true    #https://t.me/c/1624648668/71
 tcp 217.20.155.93:53 2000 3600 true   #DNS сервер ok.ru  https://t.me/c/1624648668/70
