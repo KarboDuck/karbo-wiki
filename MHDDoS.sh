@@ -20,7 +20,7 @@ fi
 cd ~
 rm -rf MHDDoS
 git clone https://github.com/MHProDev/MHDDoS.git
-pip install --upgrade pip #resolved some problems on debian
+pip install --upgrade pip > /dev/null #No output. Resolved some problems with pip on debian
 cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
