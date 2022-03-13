@@ -38,7 +38,7 @@ do
    echo "Choosen targets:"
    for i in $random_numbers
    do
-             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | tail -n +6)")
+             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
              echo $site
              sleep 0.2
    done
