@@ -48,7 +48,7 @@ do
    for i in $random_numbers
    do
              site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6)")
-             echo -e $site"\n"
+             echo -e "target: "$site"\n"
    done
       
    # Launch multiple MHDDoS instances. Targets choosed based on previosly generated list of random numbers.
