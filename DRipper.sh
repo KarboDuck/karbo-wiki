@@ -19,7 +19,7 @@ fi
 # Low number is counter-productive because some sites might go down fast, so script won't do any work.
 # Somewhere beetween 4 and 8 targets is good starting point.
 # With high number of copies console output will be messy because all instances of DRipper use same terminal.
-num_of_targets=6
+num_of_targets=4
 
 # Restart DRipper.py every N seconds (600s = 10m, 1800s = 30m, 3600s = 60m)
 restart_time=600
