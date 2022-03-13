@@ -58,7 +58,7 @@ do
             echo $cmd_line
             sleep 1
             
-            python3 ~/MHDDoS/start.py $cmd_line
+            python3 ~/MHDDoS/start.py $cmd_line&
    done
 sleep $restart_interval
 pkill -f start.py
