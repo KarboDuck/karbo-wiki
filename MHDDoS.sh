@@ -4,8 +4,10 @@
 ##### To kill script press CTRL+C several times.
 
 
-## Check every N sec if MHDDos is terminated. It happens often for some reason. Re-launch if it's not running.
-check_interval=10
+## Restart script every N seconds (600s = 10m).
+## It allows to download MHDDoS updates and target list updates.
+## Also for some reaseon MHDDoS crashes quite often, so restart eliminates that problem.
+restart_interval=600
 
 ## Number of sites to attack simultaneously. Choosen from (https://github.com/KarboDuck/karbo-wiki/blob/master/MHDDoS_targets)
 num_of_targets=4
