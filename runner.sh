@@ -9,9 +9,9 @@ restart_interval=1800
 
 ## "num_of_copies" allows to start several copies of runner.py.
 ## Each copy will choose different target from https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets
-## This is different from "multiple targets" in runner.py. "multiple targets" will attack with same method.
-## "num_of_copies" allows to launch several copies of runner.py and targets can be attacked with different methods.
-num_of_targets=2
+## This is different from "multiple targets" in runner.py. Built in runner.py "multiple targets" can attack multiple IP's but only with same one method.
+## "num_of_copies" allows to launch several copies of runner.py and targets will be attacked with different methods, if specified.
+num_of_copies=2
 
 sudo apt update
 
@@ -49,7 +49,7 @@ do
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
    # Create list with random numbers. To choose random targets from list on next step.
-   random_numbers=$(shuf -i 1-$list_size -n $num_of_targets)
+   random_numbers=$(shuf -i 1-$list_size -n $num_of_copies)
    echo -e "random numbers: " $random_numbers "\n"
    
    # Print all randomly selected targets on screen
