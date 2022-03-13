@@ -16,11 +16,13 @@ if [ ! -f /usr/bin/git ]; then
    sudo apt install git
 fi
 
+#No output. Resolved some problems with pip on debian
+pip install --upgrade pip > /dev/null 
+
 #Install latest version of MHDDoS
 cd ~
 rm -rf MHDDoS
 git clone https://github.com/MHProDev/MHDDoS.git
-pip install --upgrade pip > /dev/null #No output. Resolved some problems with pip on debian
 cd MHDDoS
 pip install -r requirements.txt > /dev/null #(no output on screen)
 
